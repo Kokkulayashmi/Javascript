@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .codepen-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #D9DCD6;
+            height: 100vh;
+        }
+
+        .book {
+            height: 45rem;
+            width: 45rem;
+            font-size: 1.4rem;
+            box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.25);
+            text-align: center;
+            position: relative;
+            color: #484e4a;
+        }
+
+        .page {
+            width: 100%;
+            height: 45rem;
+            perspective: 1500px;
+        }
+
+        .page__1 {
+            background-color: #0D5C63;
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+            transition: all 1s 0.3s;
+            transform-origin: 0 50%;
+            z-index: 2;
+        }
+
+        .page__1::after {
+            content: "Neat, huh?";
+            color: #eff0eb;
+            position: absolute;
+            padding-top: 1.5rem;
+            top: 0;
+            left: 0;
+            background-color: #424B54;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0;
+            transform: rotateY(180deg);
+            transition: all 0.3s 0.5s;
+        }
+
+        .page__2 {
+            background-color: #BAA898;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+
+        .page:hover .page__1 {
+            transform: rotateY(-180deg);
+            box-shadow: 1.5rem 2rem 3rem rgba(0, 0, 0, 0.25);
+        }
+
+        .page:hover .page__1::after {
+            opacity: 1;
+        }
+        @keyframes heartAnimation {
+            0% { opacity: 0; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-20px); }
+            100% { opacity: 0; transform: translateY(-40px); }
+        }
+        p{
+            font-size: medium;
+            font-family: 'Lucida Sans';
+            font-style: italic;
+        }
+        
+        h2{
+            font-family: "Lucida Handwriting";
+            color: rgb(81, 77, 77);
+            
+        }
+        button {
+  position: fixed; 
+  bottom: 0; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  padding: 3px 10px;
+  background-color: #343333;
+  color: #8a8585;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+       
+    </style>
+</head>
+<body>
+    <div class="codepen-wrapper">
+        <div class="book">
+            <div class="page">
+                <div class="page__1">
+                   <img src="pic5.png" alt="Your Image" style="width: 50%;height: 50% ; object-fit: cover;">
+                    <img src="pic7.png" alt="Your Image" style="width: 50%;height: 50%; object-fit: cover;">                    
+                </div>
+                <div class="page__2">
+                    <p>May your birthday be a fresh start for everything you have dreamt of! Happy Birthday Krithika!</p>
+                    <p>Happy birthday, dear! May your day be filled with endless joy and wonderful surprises.</p>
+                    <p>May your birthday be the start of a new and exciting chapter in your life.</p>
+                    <p>You are an incredible soul, and I’m grateful to have you in my life. Happy birthday!</p>
+                    <p>May this birthday bring you happiness, success, and all the blessings your heart desires</p>
+                    <p>Here’s to another year of your gracious growing journey my sweetheart. Happy Birthday !</p>
+                   <p>Happy Birthday to the most beautiful soul on this earth. May God bless you with lots of love.</p> 
+                   <p>You deserve the best birthday ever. Happy Birthday</p>
+                   <img src="gif.gif" width =20% height =20%>
+                   <br>
+                   <p> I Wish you to all achieve your dreams</p>
+                <h2>Happiest Birthday💖</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="myAudio" src="audio.mp3"></audio>
+    <script>
+        const audio = document.getElementById('myAudio');
+        function playAudioOnClick() {
+            if (audio.paused || audio.ended) {
+                audio.play(); 
+            } else {
+                audio.pause();
+            }
+        }
+        document.addEventListener('click', playAudioOnClick);
+    </script>
+     <!--<button onclick="redirectToGiftPage()">Get Ready😎</button> -->
+
+    <script>
+        function redirectToGiftPage() {
+            window.location.href = 'end.html'; 
+        }
+    </script>
+
+</body>
+</html>
+

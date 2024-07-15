@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        background-color:  #151719;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 50vh;
+        flex-direction: column; 
+        background-image: url('abc.gif');
+      }
+      
+      .waviy {
+        position: relative;
+        -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+        font-size: 60px;
+        top: -20px; 
+      }
+      
+      .waviy span {
+        font-family: 'Alfa Slab One', cursive;
+        position: relative;
+        display: inline-block;
+        color: #fff;
+        text-transform: uppercase;
+        animation: waviy 1s infinite;
+        animation-delay: calc(.1s * var(--i));
+      }
+      
+      @keyframes waviy {
+        0%, 40%, 100% {
+          transform: translateY(0);
+        }
+        20% {
+          transform: translateY(-20px);
+        }
+      }
+      
+      /* Sparkle effect */
+      .waviy span::before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.6), rgba(255,255,255,0));
+        top: -2px;
+        left: 0;
+        animation: sparkle 1s infinite linear alternate;
+      }
+      
+      .waviy span::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.6), rgba(255,255,255,0));
+        top: -2px;
+        right: 0;
+        animation: sparkle 1s infinite linear alternate-reverse;
+      }
+      
+      @keyframes sparkle {
+        to {
+          transform: translateY(15px);
+        }
+      }
+      
+      .waviy1 {
+        position: relative;
+        font-size: 80px; /* Larger font size */
+        font-weight: bold; /* Bold text */
+        font-style: italic;
+        margin-top: 20px; /* Space between the texts */
+        color: #fff;
+        font-family: 'Lucida Handwriting';
+        display: flex;
+        align-items: center;
+      }
+      
+      .waviy1 span {
+        display: inline-block;
+        font-family: 'Segoe Script';
+        font-style: bold;
+        font-style: italic;
+        font-weight: 300;
+        /*text-transform: uppercase;*/
+        margin-top: 20px;
+        animation: flip 2s infinite;
+        animation-delay: calc(.2s * var(--i));
+      }
+      
+      @keyframes flip {
+        0%, 80% {
+          transform: rotateY(360deg);
+        }
+      }
+      
+      /* Image positioning */
+      .image-left,
+      .image-right {
+        width: 50px; 
+        height: auto; 
+        margin: 0 10px; 
+      }
+      .rounded-image {
+        position: fixed;
+        bottom: 100px; 
+        left: 50%; 
+        transform: translateX(-50%);
+        border-radius: 50%;
+        width: 300px; 
+        height: 300px;
+
+      }
+    
+      button {
+      position: absolute;
+      bottom: 30px; 
+      left: 50%; /* Position the button in the horizontal center */
+      transform: translateX(-50%); /* Center the button horizontally */
+      padding: 10px 10px;
+      background-color: #343333;
+      color: #8a8585;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    </style>
+  </head>
+  <body>
+    <div class="waviy">
+      <img src="pic1.jpeg" alt="Your Image" class="rounded-image">
+      <img src="glitter.png" alt="Left Image" class="image-left">
+      <span style="--i:1">H</span>
+      <span style="--i:2">A</span>
+      <span style="--i:3">P</span>
+      <span style="--i:4">P</span>
+      <span style="--i:5">Y</span>
+      <span style="--i:6">B</span>
+      <span style="--i:7">I</span>
+      <span style="--i:8">R</span>
+      <span style="--i:9">T</span>
+      <span style="--i:10">H</span>
+      <span style="--i:11">D</span>
+      <span style="--i:12">A</span>
+      <span style="--i:13">Y</span>
+      <img src="glitter.png" alt="Left Image" class="image-right">
+    </div>
+    <div class="waviy1">
+      <span style="--i:1">O</span>
+      <span style="--i:2">M</span>
+      <span style="--i:3">E</span>
+      <span style="--i:4">R</span>
+      <span style="--i:5">🫶</span>
+    </div>
+    <button onclick="redirectToNextPage()">More Wishes✨</button>
+
+    <script>
+        function redirectToNextPage() {
+            window.location.href = 'next.html'; // Change to the URL of your next page
+        }
+        </script>
+        <audio id="myAudio" src="Happy Birthday.mp3"></audio>
+        <script>
+            const audio = document.getElementById('myAudio');
+            function playAudioOnClick() {
+                if (audio.paused || audio.ended) {
+                    audio.play(); 
+                } else {
+                    audio.pause();
+                }
+            }
+            document.addEventListener('click', playAudioOnClick);
+        </script>
+  </body>
+</html>

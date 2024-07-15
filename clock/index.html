@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <style>
+        body {
+            padding-top: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("img.jpg");
+            background-size: cover;
+        }
+        .button {
+            margin: 5px;
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color:white;
+            color: black;
+        }
+        #time {
+            display: flex;
+            margin: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        #hours, #minutes, #seconds {
+            font-size: 40px;
+        }
+        #ampm {
+            font-size: 40px;
+            margin-left: 10px;
+            color:white;
+        }
+        h1 {
+            font-size: 40px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            position: absolute;
+            top: 20px;
+            left: 45%;
+           justify-content: center;
+        }
+        img{
+            height: 150px;
+            width: 150px;
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>Digital Clock</h1>
+    <img src="image.png">
+        <div id="time">
+        <div class="button" id="hours">00</div>
+        <div class="button" id="minutes">00</div>
+        <div class="button" id="seconds">00</div>
+        <div id="ampm">AM</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
